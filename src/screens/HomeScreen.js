@@ -6,7 +6,7 @@ import Product from '../components/Product'
 const HomeScreen = () => {
   const [products, setProducts] = useState([])
 
-  console.log("products...", products);
+  console.log("products", products);
 
   useEffect(() => {
     axios
