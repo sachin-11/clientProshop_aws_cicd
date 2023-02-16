@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
-          <Link to = "/">
+          <Link to = "/home">
             ProShop
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
