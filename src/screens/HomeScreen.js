@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import { Row, Col } from 'react-bootstrap'
-import axios from 'axios'
-import Product from '../components/Product'
+import React, { useEffect } from "react";
+import { Row, Col } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import Message from "../components/Message";
+import Loader from "../components/Loader";
+import { listProducts } from "../../src/actions/productActions";
+import Product from "../components/Product";
 
 const HomeScreen = () => {
-  const [products, setProducts] = useState([])
+  const dispatch = useDispatch();
+  const productList = useSelector((state) => state?.productList);
+  const { loading, error, products } = productList;
 
-  console.log("products..", products);
+  console.log("products", products);
 
   useEffect(() => {
-    axios
-    .get('http://13.232.253.196/api/products')
-    .then((res) => {
-        setProducts(res.data)
-      })
-    .catch((err) => {
-        console.log(err)
-      })
-  }, [])
+    dispatch(listProducts());
+  }, [dispatch]);
+
   return (
     <>
+      {loading && <Loader />}
+      {error && <Message variant="danger">{error}</Message>}
       <h1>Latest Products</h1>
       <Row>
         {products.map((product) => (
@@ -29,7 +30,7 @@ const HomeScreen = () => {
         ))}
       </Row>
     </>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
