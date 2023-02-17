@@ -6,11 +6,11 @@ import Product from '../components/Product'
 const HomeScreen = () => {
   const [products, setProducts] = useState([])
 
-  console.log("products", products);
+  console.log("products..", products);
 
   useEffect(() => {
     axios
-    .get('http://3.111.219.8/api/products')
+    .get('http://13.232.253.196/api/products')
     .then((res) => {
         setProducts(res.data)
       })
