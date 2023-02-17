@@ -11,7 +11,7 @@
   //  const product = products.find((p) => p._id === params.id)
   useEffect(() => {
     axios
-    .get(`http://13.232.194.92/api/products/${params.id}`)
+    .get(`http://3.111.219.8/api/products/${params.id}`)
     .then((res) => {
         setProduct(res.data)
       })

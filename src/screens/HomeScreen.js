@@ -10,7 +10,7 @@ const HomeScreen = () => {
 
   useEffect(() => {
     axios
-    .get('http://13.232.194.92//api/products')
+    .get('http://3.111.219.8/api/products')
     .then((res) => {
         setProducts(res.data)
       })
