@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
 import { Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { PayPalButton } from 'react-paypal-button-v2'
+// import { PayPalButton } from 'react-paypal-button-v2'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { getOrderDetails, payOrder  } from '../actions/orderActions'
@@ -174,7 +174,7 @@ const OrderScreen = () => {
                   <Col>${order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              {!order.isPaid && (
+              {/* {!order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
                   {!sdkReady ? (
@@ -186,7 +186,7 @@ const OrderScreen = () => {
                     />
                   )}
                 </ListGroup.Item>
-              )}
+              )} */}
             </ListGroup>
           </Card>
         </Col>
