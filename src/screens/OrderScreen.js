@@ -10,7 +10,7 @@ import { getOrderDetails, payOrder  } from '../actions/orderActions'
 import { ORDER_PAY_RESET } from '../constants/orderConstants'
 
 const OrderScreen = () => {
-  const [sdkReady, setSdkReady] = useState(false)
+  const [ setSdkReady] = useState(false)
  const params = useParams();
   const orderId = params.id
 
@@ -21,7 +21,7 @@ const OrderScreen = () => {
 
 
   const orderPay = useSelector((state) => state.orderPay)
-  const { loading: loadingPay, success: successPay } = orderPay
+  const { success: successPay } = orderPay
 
   if (!loading) {
     //   Calculate prices
@@ -57,12 +57,13 @@ const OrderScreen = () => {
         setSdkReady(true)
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, orderId, successPay, order])
 
-  const successPaymentHandler = (paymentResult) => {
-    console.log(paymentResult)
-    dispatch(payOrder(orderId, paymentResult))
-  }
+  // const successPaymentHandler = (paymentResult) => {
+  //   console.log(paymentResult)
+  //   dispatch(payOrder(orderId, paymentResult))
+  // }
 
   return loading ? (
     <Loader />
