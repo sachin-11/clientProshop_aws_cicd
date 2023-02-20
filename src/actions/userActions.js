@@ -218,7 +218,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
       },
     }
 
-   await axios.delete(`http://13.232.253.196/api/users/${id}`, config)
+   await axios.delete(`http://13.232.253.196/api/user/${id}`, config)
 
     dispatch({ type: USER_DELETE_SUCCESS })
   } catch (error) {
