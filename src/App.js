@@ -23,8 +23,8 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <main>
           <Header />
+          <main  className='py-3'>
           <Container>
             <Routes>
               <Route path="/search/:keyword" element={<HomeScreen />} />
@@ -53,9 +53,9 @@ const App = () => {
               <Route path="/profile" element={<ProfileScreen />} />
             </Routes>
           </Container>
+          </main>
 
           <Footer />
-        </main>
       </BrowserRouter>
     </>
   );
