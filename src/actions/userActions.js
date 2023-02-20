@@ -253,7 +253,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.put(`http://13.232.253.196/api/users/${user._id}`, user, config)
+    const { data } = await axios.put(`http://13.232.253.196/api/user/${user._id}`, user, config)
 
     dispatch({ type: USER_UPDATE_SUCCESS })
 
