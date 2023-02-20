@@ -13,6 +13,7 @@ import ProductEditScreen from "./screens/ProductEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import OrderScreen from "./screens/OrderScreen";
 import OrderListScreen from "./screens/OrderListScreen";
+import UserEditScreen from './screens/UserEditScreen'
 import UserListScreen from "./screens/UserListScreen";
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
@@ -43,6 +44,10 @@ const App = () => {
                <Route
                 path="/admin/product/:id/edit"
                 element={<ProductEditScreen />}
+              />
+                <Route
+                path="/admin/user/:id/edit"
+                element={<UserEditScreen />}
               />
               <Route path="/order/:id" element={<OrderScreen />} />
               <Route path="/login/shipping" element={<ShippingScreen />} />
